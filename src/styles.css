@@ -1,6 +1,6 @@
 .weather-app {
   width: 50%;
-  margin: 0 auto;
+  margin: 30px auto;
   top: 50px;
   background: linear-gradient(-225deg, #20e2d7 0%, #f9fea5 100%);
   padding: 20px;
