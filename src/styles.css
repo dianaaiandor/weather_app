@@ -25,7 +25,6 @@ input {
   opacity: 0.33;
   border-radius: 10px;
   border: #35495e 2px solid;
-  font-size: 18px;
 }
 input[type="submit"],
 button {
@@ -34,20 +33,14 @@ button {
   border: #347474 2px solid;
   color: #42b883;
   border-radius: 10px;
-  font-size: 18px;
 }
 a {
   text-decoration: none;
 }
-.col-5 {
-  padding-right: 0;
-}
-.my-location {
-  padding-left: 0;
-}
+
 .weather-parameters {
   padding-top: 30px;
-  font-size: small;
+  font-size: 16px;
 }
 .weather-parameters p {
   margin-bottom: 0;
