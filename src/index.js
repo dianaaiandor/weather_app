@@ -87,6 +87,11 @@ function apiResponse(response) {
   defaultCity.innerHTML = userCity;*/
   // інший запис стрічок вище
   document.querySelector("#default-city").innerHTML = response.data.name;
+  let iconElement = document.querySelector("#icon");
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
 
   cleanUserCity();
   //додати дані для дощу
