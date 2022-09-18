@@ -25,47 +25,19 @@ let minutes = formatTime(nowdate.getMinutes());
 let currentDay = document.querySelector("h2");
 currentDay.innerHTML = `${day}, ${hours}:${minutes} `;
 
-// city engine
-
-/*function pinCity() {
-  let userCity = document.querySelector("#user-city");
-  let defaultCity = document.querySelector("#default-city");
-  defaultCity.innerHTML = userCity.value;
-}*/
-
-// c|f
-
-/*
-function changeTempF(event) {
-  event.preventDefault();
-  let temp = document.querySelector(".current-temperature");
-  temp.innerHTML = `68`;
-}
-function changeTempC(event) {
-  event.preventDefault();
-  let temp = document.querySelector(".current-temperature");
-  temp.innerHTML = `20`;
-}
-let fahrenheit = document.querySelector("#fahrenheit");
-fahrenheit.addEventListener("click", changeTempF);
-
-let celsius = document.querySelector("#celsius");
-celsius.addEventListener("click", changeTempC);
-*/
-
 //current weather
 
 function apiResponse(response) {
   console.log(response);
 
-  //let tempOpenWeather = response.data.main.temp;
-  //let currentTemp = document.querySelector(".current-temperature");
-  //currentTemp.innerHTML = tempOpenWeather;
+  celsiusTemperature = response.data.main.temp;
+  let currentTemp = document.querySelector(".current-temperature");
+  currentTemp.innerHTML = Math.round(celsiusTemperature);
 
   // інший запис відображення для температури
-  document.querySelector(".current-temperature").innerHTML = Math.round(
+  /*document.querySelector(".current-temperature").innerHTML = Math.round(
     response.data.main.temp
-  );
+  );*/
 
   let feelingOpenWeather = Math.round(response.data.main.feels_like);
   let currentFeeling = document.querySelector("#feeling");
@@ -82,10 +54,6 @@ function apiResponse(response) {
   document.querySelector("#description").innerHTML =
     response.data.weather[0].main;
 
-  /*let userCity = response.data.name;
-  let defaultCity = document.querySelector("#default-city");
-  defaultCity.innerHTML = userCity;*/
-  // інший запис стрічок вище
   document.querySelector("#default-city").innerHTML = response.data.name;
   let iconElement = document.querySelector("#icon");
   iconElement.setAttribute(
@@ -94,7 +62,6 @@ function apiResponse(response) {
   );
 
   cleanUserCity();
-  //додати дані для дощу
 }
 
 function apiRequest() {
@@ -115,8 +82,6 @@ function main(event) {
 
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", main);
-
-// my location - погода змінюється, але не відображається місто
 
 function retrievePosition(position) {
   console.log(position);
@@ -140,3 +105,24 @@ mylocation.addEventListener("click", startNavigation);
 function cleanUserCity() {
   document.getElementById("search-form").reset();
 }
+
+// c|f
+
+function changeTempF(event) {
+  event.preventDefault();
+  let tempF = (celsiusTemperature * 9) / 5 + 32;
+  document.querySelector(".current-temperature").innerHTML = Math.round(tempF);
+}
+function changeTempC(event) {
+  event.preventDefault();
+  let tempC = (document.querySelector(".current-temperature").innerHTML =
+    Math.round(celsiusTemperature));
+}
+
+let fahrenheit = document.querySelector("#fahrenheit");
+fahrenheit.addEventListener("click", changeTempF);
+
+let celsius = document.querySelector("#celsius");
+celsius.addEventListener("click", changeTempC);
+
+let celsiusTemperature = null;
