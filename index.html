@@ -17,30 +17,38 @@
     <div class="conteiner">
       <div class="weather-app">
         <h2>Monday, August 29, 10:30</h2>
-        <form id="search-form">
-          <label for="city">Current weather in </label>
-          <span id="default-city"> </span>
-          <div>
-            <input
-              type="text"
-              name="city"
-              placeholder="Enter your city"
-              id="user-city"
-            />
-            <input type="submit" value="Search" />
+        <h1 for="city">Current weather in <span id="default-city"> </span></h1>
+
+        <div class="row">
+          <div class="col-5">
+            <form id="search-form">
+              <div>
+                <input
+                  type="text"
+                  name="city"
+                  placeholder="Enter your city"
+                  id="user-city"
+                />
+                <input type="submit" value="Search" />
+              </div>
+            </form>
           </div>
-        </form>
-        <button id="my-location">My location</button>
+          <div class="col my-location">
+            <button id="my-location">My location</button>
+          </div>
+        </div>
+
         <div class="row">
           <div class="col-4 weather-parameters">
+            <p>
+              <strong> <span id="description"> Party cloudy </span> </strong>
+            </p>
+
             <p>
               wind: <strong> <span id="wind"> 10 </span> m/c</strong>
             </p>
             <p>
               humidity: <strong> <span id="humidity"> 50 </span> % </strong>
-            </p>
-            <p>
-              <strong> <span id="description"> Party cloudy </span> </strong>
             </p>
           </div>
           <div class="col-4">

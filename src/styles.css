@@ -12,32 +12,39 @@ h2 {
   color: #ffffff;
 }
 
-label,
+h1,
 #default-city {
-  font-size: 25px;
+  font-size: 35px;
   font-weight: 600;
 }
-label span {
-  font-size: 25px;
+h1 span {
+  font-size: 30px;
   font-weight: 600;
 }
 input {
   opacity: 0.33;
   border-radius: 10px;
   border: #35495e 2px solid;
+  font-size: 18px;
 }
 input[type="submit"],
 button {
   background: #347474;
   opacity: 1;
-  border: #347474 1px solid;
+  border: #347474 2px solid;
   color: #42b883;
   border-radius: 10px;
+  font-size: 18px;
 }
 a {
   text-decoration: none;
 }
-
+.col-5 {
+  padding-right: 0;
+}
+.my-location {
+  padding-left: 0;
+}
 .weather-parameters {
   padding-top: 30px;
   font-size: small;
