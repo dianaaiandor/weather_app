@@ -1,5 +1,5 @@
 .weather-app {
-  width: 50%;
+  width: 40%;
   margin: 30px auto;
   top: 50px;
   background: linear-gradient(-225deg, #20e2d7 0%, #f9fea5 100%);
@@ -31,13 +31,14 @@ button {
   background: #347474;
   opacity: 1;
   border: #347474 2px solid;
-  color: #42b883;
   border-radius: 10px;
+  color: #ffffff;
 }
 a {
   text-decoration: none;
   cursor: default;
 }
+
 .block-main-parameters {
   padding-bottom: 10px;
 }
