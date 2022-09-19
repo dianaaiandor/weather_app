@@ -33,6 +33,7 @@ button {
   border: #347474 2px solid;
   border-radius: 10px;
   color: #ffffff;
+  padding: 0 15px 2px 12px;
 }
 a {
   cursor: default;
