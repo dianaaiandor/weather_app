@@ -35,8 +35,12 @@ button {
   color: #ffffff;
 }
 a {
-  text-decoration: none;
   cursor: default;
+  text-decoration: none;
+}
+.degree .active {
+  text-decoration: none;
+  color: #000000;
 }
 
 .block-main-parameters {

@@ -110,19 +110,23 @@ function cleanUserCity() {
 
 function changeTempF(event) {
   event.preventDefault();
+  celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
   let tempF = (celsiusTemperature * 9) / 5 + 32;
   document.querySelector(".current-temperature").innerHTML = Math.round(tempF);
 }
 function changeTempC(event) {
   event.preventDefault();
+  celsiusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
   let tempC = (document.querySelector(".current-temperature").innerHTML =
     Math.round(celsiusTemperature));
 }
 
-let fahrenheit = document.querySelector("#fahrenheit");
-fahrenheit.addEventListener("click", changeTempF);
+let fahrenheitLink = document.querySelector("#fahrenheit");
+fahrenheitLink.addEventListener("click", changeTempF);
 
-let celsius = document.querySelector("#celsius");
-celsius.addEventListener("click", changeTempC);
+let celsiusLink = document.querySelector("#celsius");
+celsiusLink.addEventListener("click", changeTempC);
 
 let celsiusTemperature = null;
