@@ -39,6 +39,10 @@ a {
   cursor: default;
   text-decoration: none;
 }
+.row-cols-auto div {
+  padding-right: 0;
+}
+
 .degree .active {
   text-decoration: none;
   color: #000000;
