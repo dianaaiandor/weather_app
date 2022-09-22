@@ -25,21 +25,33 @@ h1 span {
 input {
   opacity: 0.33;
   border-radius: 10px;
-  border: #35495e 2px solid;
+  border: #35495e 1px solid;
+  line-height: 1.5;
+  font-size: 18px;
 }
-input[type="submit"],
+
 button {
   background: #347474;
-  opacity: 1;
-  border: #347474 2px solid;
+  border: #347474 1px solid;
   border-radius: 10px;
   color: #ffffff;
-  padding: 0 15px 2px 12px;
+  font-size: 18px;
+  line-height: 1.5;
 }
 a {
   cursor: default;
   text-decoration: none;
 }
+.search-button {
+  padding: 1px 10px;
+}
+.my-location {
+  padding-left: 5px;
+}
+#my-location {
+  padding: 1px 15px;
+}
+
 .row-cols-auto div {
   padding-right: 0;
 }
@@ -50,7 +62,7 @@ a {
 }
 
 .block-main-parameters {
-  padding-bottom: 10px;
+  padding: 10px 0 10px 0;
 }
 .weather-parameters {
   padding-top: 30px;
@@ -80,8 +92,19 @@ a {
   margin: 0 auto;
 }
 #icon {
-  height: 150px;
+  height: 130px;
 }
 .weather-forecast {
   margin-top: 20px;
+  text-align: center;
+}
+
+.date {
+  margin-bottom: 10px;
+}
+.weather-forecast p {
+  margin-bottom: 10px;
+}
+.weather-forecast img {
+  margin-bottom: 10px;
 }
