@@ -68,7 +68,8 @@ function apiRequest() {
   let city = document.querySelector("#user-city").value;
   console.log("city", city);
 
-  let apiKey = "c95d60a1e3adbeb286133f1ebebc2579";
+  // c95d60a1e3adbeb286133f1ebebc2579";
+  let apiKey = "b18e7038c22b269163f18cda5225176b";
   let units = "metric";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
   axios.get(apiUrl).then(apiResponse);

@@ -15,8 +15,8 @@ h2 {
 
 h1,
 #default-city {
-  font-size: 35px;
-  font-weight: 600;
+  font-size: 30px;
+  font-weight: 500;
 }
 h1 span {
   font-size: 30px;
@@ -28,6 +28,7 @@ input {
   border: #35495e 1px solid;
   line-height: 1.5;
   font-size: 18px;
+  padding-left: 10px;
 }
 
 button {
@@ -101,6 +102,10 @@ a {
 
 .date {
   margin-bottom: 10px;
+  opacity: 0.9;
+}
+.date:hover {
+  font-size: larger;
 }
 .weather-forecast p {
   margin-bottom: 10px;
