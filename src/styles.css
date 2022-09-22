@@ -5,6 +5,7 @@
   background: linear-gradient(-225deg, #20e2d7 0%, #f9fea5 100%);
   padding: 20px;
   border-radius: 30px;
+  font-family: "Roboto", sans-serif;
 }
 
 h2 {
@@ -80,4 +81,7 @@ a {
 }
 #icon {
   height: 150px;
+}
+.weather-forecast {
+  margin-top: 20px;
 }

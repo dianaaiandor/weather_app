@@ -10,6 +10,12 @@
       crossorigin="anonymous"
     />
     <link href="src/styles.css" rel="stylesheet" type="text/css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   </head>
 
@@ -67,15 +73,15 @@
             <p>
               <span class="current-temperature"> 20 </span>
               <span class="degree">
-                <a href="" id="celsius" class="active"> ℃ </a> |
-                <a href="" id="fahrenheit"> ℉ </a>
+                <a href="" id="celsius" class="active">°C</a> |
+                <a href="" id="fahrenheit">°F</a>
               </span>
             </p>
             <p class="feeling">Feels like <span id="feeling">18</span>℃</p>
           </div>
         </div>
 
-        <div class="row align-items-start">
+        <div class="row align-items-start weather-forecast">
           <div class="col-2">
             <p>Aug 8</p>
             <img src="images/sun.svg" alt="sun" width="30px" />
