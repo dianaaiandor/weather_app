@@ -96,7 +96,7 @@ a {
   height: 130px;
 }
 .weather-forecast {
-  margin-top: 20px;
+  margin: 20px 5px 0 5px;
   text-align: center;
 }
 
@@ -104,8 +104,15 @@ a {
   margin-bottom: 10px;
   opacity: 0.9;
 }
-.date:hover {
+.col-2 {
+  margin-bottom: 30px;
+}
+.col-2:hover {
   font-size: larger;
+  margin-bottom: 0;
+  background: rgba(255, 255, 255, 0.2);
+  border: rgba(255, 255, 255, 0.2) 1px solid;
+  border-radius: 15px;
 }
 .weather-forecast p {
   margin-bottom: 10px;
