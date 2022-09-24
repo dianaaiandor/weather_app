@@ -24,7 +24,27 @@ let minutes = formatTime(nowdate.getMinutes());
 
 let currentDay = document.querySelector("h2");
 currentDay.innerHTML = `${day}, ${hours}:${minutes} `;
+// forecast
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#weather-forecast");
+  let forecastHTML = `<div class="row">`;
+  let days = ["Mon", "Tue", "Wed"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `     <div class="col-2">
+            <p class="date">${day}</p>
+            <div class="forecast-icon">
+              <img src="images/sun.svg" alt="sun" width="30px" />
+            </div>
+            <p class="forecast-temp">15℃</p>
+          </div>`;
+  });
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+displayForecast();
 //current weather
 
 function apiResponse(response) {
@@ -67,8 +87,6 @@ function apiResponse(response) {
 function apiRequest() {
   let city = document.querySelector("#user-city").value;
   console.log("city", city);
-
-  // c95d60a1e3adbeb286133f1ebebc2579";
   let apiKey = "b18e7038c22b269163f18cda5225176b";
   let units = "metric";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
@@ -78,7 +96,6 @@ function apiRequest() {
 function main(event) {
   event.preventDefault();
   apiRequest();
-  //pinCity();
 }
 
 let searchForm = document.querySelector("#search-form");
