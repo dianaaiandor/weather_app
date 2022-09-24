@@ -26,7 +26,8 @@ let currentDay = document.querySelector("h2");
 currentDay.innerHTML = `${day}, ${hours}:${minutes} `;
 // forecast
 
-function displayForecast() {
+function displayForecast(responce) {
+  console.log("ForecastResponse", responce.data.daily);
   let forecastElement = document.querySelector("#weather-forecast");
   let forecastHTML = `<div class="row">`;
   let days = ["Mon", "Tue", "Wed"];
@@ -44,11 +45,21 @@ function displayForecast() {
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
 }
-displayForecast();
+
+function getForecast(coordinates) {
+  let apiKey = "85bbd3d16a2dfe0ecf253c7ae1e8fe03";
+  let units = "metric";
+  let apiUrlForecast = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&exclude=hourly,minutely&appid=${apiKey}&units=${units}`;
+  console.log("APIForecast", apiUrlForecast);
+
+  console.log("MyCoord", coordinates);
+  axios.get(apiUrlForecast).then(displayForecast);
+}
+
 //current weather
 
 function apiResponse(response) {
-  console.log(response);
+  console.log("MyWeather", response);
 
   celsiusTemperature = response.data.main.temp;
   let currentTemp = document.querySelector(".current-temperature");
@@ -81,11 +92,11 @@ function apiResponse(response) {
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
 
+  getForecast(response.data.coord);
   cleanUserCity();
 }
 
-function apiRequest() {
-  let city = document.querySelector("#user-city").value;
+function apiRequest(city) {
   console.log("city", city);
   let apiKey = "b18e7038c22b269163f18cda5225176b";
   let units = "metric";
@@ -95,7 +106,8 @@ function apiRequest() {
 
 function main(event) {
   event.preventDefault();
-  apiRequest();
+  let cityInput = document.querySelector("#user-city").value;
+  apiRequest(cityInput);
 }
 
 let searchForm = document.querySelector("#search-form");
@@ -148,3 +160,4 @@ let celsiusLink = document.querySelector("#celsius");
 celsiusLink.addEventListener("click", changeTempC);
 
 let celsiusTemperature = null;
+apiRequest("Kyiv");
