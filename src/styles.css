@@ -40,8 +40,10 @@ button {
   line-height: 1.5;
 }
 a {
-  cursor: default;
   text-decoration: none;
+}
+a:hover {
+  color: #00ffff;
 }
 .search-button {
   padding: 1px 10px;
@@ -52,14 +54,11 @@ a {
 #my-location {
   padding: 1px 15px;
 }
-
+#description {
+  font-size: 20px;
+}
 .row-cols-auto div {
   padding-right: 0;
-}
-
-.degree .active {
-  text-decoration: none;
-  color: #000000;
 }
 
 .block-main-parameters {
@@ -68,6 +67,7 @@ a {
 .weather-parameters {
   padding-top: 30px;
   font-size: 16px;
+  line-height: 1.2;
 }
 .weather-parameters p {
   margin-bottom: 0;

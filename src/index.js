@@ -23,9 +23,9 @@ let hours = formatTime(nowdate.getHours());
 let minutes = formatTime(nowdate.getMinutes());
 
 let currentDay = document.querySelector("h2");
-currentDay.innerHTML = `${day}, ${hours}:${minutes} `;
-// forecast
+currentDay.innerHTML = `${day}, ${hours}:${minutes} <small>(GMT+2)</small>`;
 
+// forecast
 function formatDay(timestamp) {
   let forecastDays = new Date(timestamp * 1000);
   let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
@@ -110,6 +110,10 @@ function apiResponse(response) {
   cleanUserCity();
 }
 
+function cleanUserCity() {
+  document.getElementById("search-form").reset();
+}
+
 function apiRequest(city) {
   console.log("city", city);
   let apiKey = "b18e7038c22b269163f18cda5225176b";
@@ -123,9 +127,6 @@ function main(event) {
   let cityInput = document.querySelector("#user-city").value;
   apiRequest(cityInput);
 }
-
-let searchForm = document.querySelector("#search-form");
-searchForm.addEventListener("submit", main);
 
 function retrievePosition(position) {
   console.log(position);
@@ -143,35 +144,9 @@ function startNavigation() {
   navigator.geolocation.getCurrentPosition(retrievePosition);
 }
 
+let searchForm = document.querySelector("#search-form");
+searchForm.addEventListener("submit", main);
 let mylocation = document.querySelector("#my-location");
 mylocation.addEventListener("click", startNavigation);
 
-function cleanUserCity() {
-  document.getElementById("search-form").reset();
-}
-
-// c|f
-
-function changeTempF(event) {
-  event.preventDefault();
-  celsiusLink.classList.remove("active");
-  fahrenheitLink.classList.add("active");
-  let tempF = (celsiusTemperature * 9) / 5 + 32;
-  document.querySelector(".current-temperature").innerHTML = Math.round(tempF);
-}
-function changeTempC(event) {
-  event.preventDefault();
-  celsiusLink.classList.add("active");
-  fahrenheitLink.classList.remove("active");
-  let tempC = (document.querySelector(".current-temperature").innerHTML =
-    Math.round(celsiusTemperature));
-}
-
-let fahrenheitLink = document.querySelector("#fahrenheit");
-fahrenheitLink.addEventListener("click", changeTempF);
-
-let celsiusLink = document.querySelector("#celsius");
-celsiusLink.addEventListener("click", changeTempC);
-
-let celsiusTemperature = null;
 apiRequest("Kyiv");
