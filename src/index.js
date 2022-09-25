@@ -29,24 +29,36 @@ currentDay.innerHTML = `${day}, ${hours}:${minutes} <small>(GMT+2)</small>`;
 
 function displayImage(icon) {
   let iconPath = "";
-  if (icon === `01d` || icon === "01n") {
+  if (icon === `01d`) {
     iconPath = "images/01d.svg";
-  } else if (icon === `02d` || icon === "02n") {
+  } else if (icon === `01n`) {
+    iconPath = "images/01n.svg";
+  } else if (icon === `02d`) {
     iconPath = "images/02d.svg";
+  } else if (icon === `02n`) {
+    iconPath = "images/02n.svg";
   } else if (icon === `03d` || icon === `03n`) {
     iconPath = "images/03d.svg";
   } else if (icon === `04d` || icon === `04n`) {
     iconPath = "images/04d.svg";
   } else if (icon === `09d` || icon === `09n`) {
     iconPath = "images/09d.svg";
-  } else if (icon === `10d` || icon === `10n`) {
+  } else if (icon === `10d`) {
     iconPath = "images/10d.svg";
-  } else if (icon === `11d` || icon === `11n`) {
+  } else if (icon === `10n`) {
+    iconPath = "images/10n.svg";
+  } else if (icon === `11d`) {
     iconPath = "images/11d.svg";
-  } else if (icon === `13d` || icon === `13n`) {
+  } else if (icon === `11n`) {
+    iconPath = "images/11n.svg";
+  } else if (icon === `13d`) {
     iconPath = "images/13d.svg";
-  } else if (icon === `50d` || icon === `50n`) {
+  } else if (icon === `13n`) {
+    iconPath = "images/13n.svg";
+  } else if (icon === `50d`) {
     iconPath = "images/50d.svg";
+  } else if (icon === `50n`) {
+    iconPath = "images/50n.svg";
   } else {
     iconPath = "images/01d.svg";
   }
