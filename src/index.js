@@ -25,6 +25,35 @@ let minutes = formatTime(nowdate.getMinutes());
 let currentDay = document.querySelector("h2");
 currentDay.innerHTML = `${day}, ${hours}:${minutes} <small>(GMT+2)</small>`;
 
+// handle images
+
+function displayImage(icon) {
+  let iconPath = "";
+  if (icon === `01d` || icon === "01n") {
+    iconPath = "images/01d.svg";
+  } else if (icon === `02d` || icon === "02n") {
+    iconPath = "images/02d.svg";
+  } else if (icon === `03d` || icon === `03n`) {
+    iconPath = "images/03d.svg";
+  } else if (icon === `04d` || icon === `04n`) {
+    iconPath = "images/04d.svg";
+  } else if (icon === `09d` || icon === `09n`) {
+    iconPath = "images/09d.svg";
+  } else if (icon === `10d` || icon === `10n`) {
+    iconPath = "images/10d.svg";
+  } else if (icon === `11d` || icon === `11n`) {
+    iconPath = "images/11d.svg";
+  } else if (icon === `13d` || icon === `13n`) {
+    iconPath = "images/13d.svg";
+  } else if (icon === `50d` || icon === `50n`) {
+    iconPath = "images/50d.svg";
+  } else {
+    iconPath = "images/01d.svg";
+  }
+
+  return iconPath;
+}
+
 // forecast
 function formatDay(timestamp) {
   let forecastDays = new Date(timestamp * 1000);
@@ -101,10 +130,8 @@ function apiResponse(response) {
 
   document.querySelector("#default-city").innerHTML = response.data.name;
   let iconElement = document.querySelector("#icon");
-  iconElement.setAttribute(
-    "src",
-    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
-  );
+  let iconResponse = response.data.weather[0].icon;
+  iconElement.setAttribute("src", displayImage(iconResponse));
 
   getForecast(response.data.coord);
   cleanUserCity();
