@@ -77,9 +77,9 @@ function displayForecast(responce) {
             <p class="date">${formatDay(forecastDay.dt)}</p>
             <div class="forecast-icon">
             
-              <img src="http://openweathermap.org/img/wn/${
+              <img src="${displayImage(
                 forecastDay.weather[0].icon
-              }@2x.png" alt="" width="100%" />
+              )}" alt="" width="100%" />
             </div>
             <p class="forecast-temp">${Math.round(forecastDay.temp.day)}°C</p>
           </div>`;
